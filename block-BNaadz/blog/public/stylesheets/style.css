@@ -1,0 +1,205 @@
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Roboto', sans-serif;
+}
+.text-center{
+  text-align: center;
+}
+.align-center{
+  align-items: center;
+}
+.blue{
+  color: blue;
+}
+.red{
+  color: red;
+}
+.green{
+  color: green;
+}
+a{
+  text-decoration: none;
+}
+h1, a{
+  text-transform: capitalize;
+}
+.margin3{
+  margin: 3rem;
+}
+.btn{
+  display: inline-block;
+  border-radius: 6px;
+  padding: 6px 8px;
+  border: 2px solid;
+  margin: 0 5px;
+  color: white;
+}
+.btn-small{
+  color: white;
+}
+.bg-blue{
+  background-color: rgb(0, 119, 255);
+}
+.bg-green{
+  background-color: rgb(1, 196, 1);
+}
+.bg-red{
+  background-color: rgb(253, 34, 34);
+}
+.vertical-middle{
+  vertical-align: middle;
+}
+.flex{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.justify-center{
+  justify-content: center;
+}
+h1{
+  font-size: 40px;
+}
+.justify-left{
+  justify-content: left;
+}
+
+
+/* header */
+.header{
+  padding: 0.5rem;
+  margin-bottom: 0.8rem;
+  background-color: white;
+  box-shadow: 0 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+.brand img{
+  width: 40px;
+}
+
+
+
+/* footer */
+.footer{
+  padding: 0.4rem;
+}
+.footer small{
+  margin: 0 5px;
+}
+
+
+
+
+/* home index */
+.home{
+  background: url(/images/bg-index.jpg);
+  background-size: cover;
+  padding-bottom: 16rem;
+}
+.home h1{
+  padding-top: 2rem;
+}
+
+
+
+
+
+
+
+/* form */
+.form{
+  width: 400px;
+  margin: 3rem auto;
+}
+.form-control{
+  border-radius: 4px;
+  border: 2px solid grey;
+  padding: 4px;
+  font-size: 18px;
+  margin: 5px 0;
+  width: 95%;
+}
+.form-control:focus{
+  border-color: blue;
+}
+
+
+
+
+/* articles page */
+.articles{
+  padding: 2rem 6rem;
+  background-image: url(/images/articlebg.jpeg);
+  background-size: cover;
+}
+.articles-list{
+  width: 250px;
+  border: 2px solid blue;
+  border-radius: 5px;
+  padding: 1rem;
+  background: url(/images/article.jpg);
+  margin: 3rem 1rem;
+}
+.articles-list .btn{
+  margin-top: 1.5rem;
+}
+.articles-list h3, .articles-list address{
+  color: white;
+}
+
+
+
+
+
+
+/* single article page */
+.single-article{
+  padding-left: 1rem;
+  background-image: url(/images/singleArticle.jpg);
+}
+.single-article h1{
+  color: white;
+  padding-top: 1rem;
+  font-size: 36px;
+}
+.single-article address{
+  font-size: 24px;
+  color: white;
+
+}
+.single-article p{
+  font-size: 20px;
+  color: white;
+}
+.single-article small{
+  font-size: 22px;
+  color: white;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+.single-article .btn{
+  margin-bottom: 1rem;
+}
+.comment-form{
+  margin: 0;
+  width: 300px;
+  padding: 4rem 0 2rem 0;
+}
+.comments-area h2{
+  color: white;
+  font-size: 28px;
+}
+.comments .commenttitle{
+  margin-bottom: 3px;
+  margin-top: 18px;
+}
+.comment-label{
+  color: white;
+}
+.commentlike{
+  color: white;
+  display: block;
+  margin: 0.5rem 0;
+}

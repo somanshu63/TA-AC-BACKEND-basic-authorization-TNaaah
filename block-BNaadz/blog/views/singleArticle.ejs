@@ -1,0 +1,39 @@
+<%- include('partials/header') -%>
+<main>
+  <section class="single-article">
+        <h1 class="blue text-center"><%= article.title %></h1>
+        <h3><%= article.authorId.fullName %></h3>
+        <p><%= article.description %></p>
+        <small><%= article.likes %></small>
+        <div class="flex justify-left">
+            <a href="/articles/<%= article.slug %>/like" class="btn bg-green">like</a>
+            <a href="/articles/<%= article.slug %>/dislike" class="btn bg-red">dislike</a>
+        </div>
+        <div class="flex justify-left">
+            <a href="/articles/<%= article.slug %>/edit" class="btn bg-blue">edit</a>
+            <a href="/articles/<%= article.slug %>/delete" class="btn bg-red">delete</a>
+        </div>
+        <div class="comments-area">
+            <form action="/articles/<%= article.id %>/comments" method="post" class="form comment-form">
+                <fieldset>
+                    <label class="comment-label" for="">Add Comment</label>
+                    <input class="form-control" type="text" name="title" id="" placeholder="enter comment title">
+                    <input class="form-control" type="submit" value="Add Comment">
+                </fieldset>
+            </form>
+            <h2>Comments</h2>
+            <hr>
+            <div class="comments">
+                <% comments.forEach(c => { %>
+                    <p class="commenttitle"><%= c.title %></p>
+                    <span class="commentlike"><%= c.likes %></span>
+                    <a href="/comments/<%= c.id %>/like" class="btn-small bg-green">like</a>
+                    <a href="/comments/<%= c.id %>/dislike" class="btn-small bg-red">dislike</a>
+                    <a href="/comments/<%= c.id %>/edit" class="btn-small bg-blue">edit</a>
+                    <a href="/comments/<%= c.id %>/delete" class="btn-small bg-red">delete</a>
+                <% }) %>
+            </div>
+        </div>
+    </section>
+</main>
+<%- include('partials/footer') -%>

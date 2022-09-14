@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>blog</title>
+    <link rel="shortcut icon" href="/images/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/615eec2c8f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<header>
+    <div class="header align-center flex">
+        <a href="" class="btn brand">
+            <img src="/images/icon.png" alt="icon">
+        </a>
+        <div class="flex align-center">
+            <a href="/" class="btn bg-blue">home</a>
+            <a href="/users/register" class="btn bg-blue">register</a>
+            <a href="/articles" class="btn bg-blue">show articles</a>
+            <% if(user){ %>
+                <a href="/users/myarticles" class="btn bg-blue">My Articles</a>
+                <a href="/users/logout" class="btn bg-red">logout</a>
+                <a href="" class="green"><%= user.fullName %></a>
+            <% } else {%>
+                <a href="/users/login" class="btn bg-blue">login</a>
+            <% } %>
+        </div>
+    </div>
+</header>
