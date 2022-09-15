@@ -1,0 +1,26 @@
+<%- include('partials/header') -%>
+<main>
+    <div class="cart padding-0-3">
+        <h2 class="blue text-center fs-30 padding-3-0">Hello <%= user.name %></h2>
+        <h3 class="fs-30">Items</h3>
+            <div class="cart-list">
+                <% cart.products.forEach(p => { %>
+                    <div class="cart-item align-center justify-left flex">
+                        <img src="<%= p.image %>" alt="image">
+                        <a class="fs-30 blue"><%= p.name %></a>
+                        <p class="fs-25 price">Rs. <%= p.price %></p>
+                        <a class="red btn-small btn remove" href="/cart/<%= p.id %>/remove">Remove</a>
+                    </div>
+                <% }) %>
+            </div>
+            <div class="checkout flex align-center">
+                <% var sum = 0; %>
+                <% cart.products.forEach(p => { %>
+                    <% sum = sum + p.price %>
+                <% }) %>
+                <h4 class="fs-30 blue">Total Price: <%= sum %></h4>
+                <a class="fs-30 green" href="">checkout</a>
+            </div>       
+    </div>
+</main>
+<%- include('partials/footer') -%>

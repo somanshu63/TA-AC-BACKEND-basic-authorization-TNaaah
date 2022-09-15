@@ -1,0 +1,17 @@
+<%- include('partials/header') -%>
+    <main>
+      <div class="register">
+        <h1 class="text-center red fs-40 padding-3-0">Update Products</h1>
+        <form action="/products/<%= product.id %>" method="post" class="width-300 margin-3-0">
+            <fieldset>
+                <input class="form-control" value="<%= product.name %>" type="text" name="name" id="" placeholder="enter name">
+                <input class="form-control" value="<%= product.quantity %>" type="number" name="quantity" id="" placeholder="enter quantity">
+                <input class="form-control" value="<%= product.price %>" type="number" name="price" id="" placeholder="enter price">
+                <input class="form-control" value="<%= product.image %>" type="text" name="image" id="" placeholder="enter image">
+                <input class="form-control" value="<%= product.category %>" type="text" name="category" id="" placeholder="enter category">
+                <input class="form-control" type="submit" value="Update Product">
+            </fieldset>
+        </form>
+      </div>
+    </main>
+<%- include('partials/footer') -%>
