@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Shopping</title>
+    <link rel="shortcut icon" href="/images/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://kit.fontawesome.com/615eec2c8f.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="header flex align-center">
+        <a href="" class="brand fs-20">
+            Shopping
+        </a>
+        <div class="flex align-center">
+            <a href="/">home</a>
+            <a href="/products">show products</a>
+            <div class="filters">
+                <a href="" class="filter">filter <i class="fa-solid fa-chevron-down"></i></a>
+                <div class="filter-options width-200">
+                    <form action="/products" method="get">
+                        <select class="form-control" name="category" id="">
+                            <option value="">select category</option>
+                            <% if(categories){ %>
+                                <% categories.forEach( c =>{ %>
+                                    <option value="<%= c %>"><%= c %></option>
+                                <% }) %>
+                            <% } %>
+                            <input class="form-control" type="submit" value="select">
+                        </select>
+                    </form>
+                </div>
+            </div>
+            <a href="/products/form">add products</a>
+            <a href="/users/register" class="register">register</a>
+            <a href="/users/dashboard">admin dashboard</a>
+            <% if(user){ %>
+                <div class="flex flex-column align-center justify-center">
+                    <a href="" class="fs-20 blue"><%= user.name %></a>
+                    <% if(user.isAdmin){ %>
+                        <p>Admin</p>
+                    <% } %>
+                </div>
+                <% if(user.isAdmin){ %>
+                    <a href="/users/logout">logout Admin</a>
+                <% } else {%>
+                    <a href="/users/logout">logout user</a>
+                <% } %>
+            <%  }else { %>
+                <a href="/users/login" class="login">login</a>
+            <% } %>
+            <a href="/cart">
+                <img src="/images/cart.webp" alt="">
+            </a>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,42 @@
+<%- include('partials/header') -%>
+<main>
+    <div class="dashboard padding-0-3 margin-3-0">
+        <div class="flex">
+            <div class="list">
+                <h3 class="red fs-30"=>List Of Users</h3>
+                <ul>
+                    <% if(listOfUsers){ %>
+                        <% listOfUsers.forEach( u => { %>
+                            <a href="/users/<%= u.id %>">
+                                <li class="fs-25"><i class="fa-solid fa-chevron-right blue"></i><%= u.name %></li>
+                            </a>
+                        <% }); %>
+                    <% } %>
+                </ul>
+            </div>
+            <div class="list">
+                <h3 class="red fs-30"=>List Of Products</h3>
+                <ul>
+                    <% if(listOfProducts){ %>
+                        <% listOfProducts.forEach( u => { %>
+                            <a href="/products/<%= u.id %>">
+                                <li class="fs-25"><i class="fa-solid fa-chevron-right blue"></i><%= u.name %></li>
+                            </a>
+                        <% }); %>
+                    <% } %>
+                </ul>
+            </div>
+            <div class="list">
+                <h3 class="red fs-30"=>List Of Categories</h3>
+                <ul>
+                    <% if(listOfCategories){ %>
+                        <% listOfCategories.forEach( u => { %>
+                            <li class="fs-25 text-cap"><i class="fa-solid fa-chevron-right blue"></i><%= u %></li>
+                        <% }); %>
+                    <% } %>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+<%- include('partials/footer') -%>

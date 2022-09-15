@@ -1,0 +1,46 @@
+<%- include('partials/header') -%>
+
+<main>
+    <div class="margin-3-0 padding-0-3">
+        <div class="products-list padding-0-3 ">
+            <h3 class="fs-30 blue text-center"><%= product.name %></h3>
+            <div class="flex">
+                <div class="details">
+                    <p class="fs-25 ">Rs <%= product.price %></p>
+                    <p class="fs-20 like">Category: <%= product.category %></p>
+                    <p class="fs-20 like">Available: <%= product.quantity %> pcs</p>
+                    <a href="/cart/<%= product.id %>/add" class="fs-20 cart-btn btn-small btn red">Add to Cart</a><br>
+                    <% if(error){ %>
+                        <p class="red like"><%= error %></p>
+                    <% } %>
+                    <p class="fs-25 like"><%= product.likes%></p>
+                    <a href="/products/<%= product.id %>/like" class="like btn btn-small green">like</a>
+                    <a href="/products/<%= product.id %>/dislike" class="like btn btn-small red">dislike</a>
+                    <div class="width-200 admin-controls">
+                        <% if(user.isAdmin){ %>
+                            <a class="btn block btn-big blue" href="/products/<%= product.id %>/edit">edit product</a>
+                            <a class="block btn btn-big red" href="/products/<%= product.id %>/delete">delete product</a>
+                        <% } %>
+                    </div>
+                    <div class="comments">
+                        <form action="/products/<%= product.id %>/comment" class="width-200" method="post">
+                            <fieldset>
+                                <label for="" class="fs-20">Add Comment</label>
+                                <input class="form-control" type="text" name="title" id="" placeholder="enter comment">
+                                <input class="form-control" type="submit" value="Add Comment">
+                            </fieldset>
+                        </form>
+                        <h4 class="fs-25 blue">Comments</h4>
+                        <% comments.forEach( c => { %>
+                            <p class="fs-20 like"><%= c.title %></p>
+                        <% }) %>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="<%= product.image %>" alt="product.name">
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<%- include('partials/footer') -%>

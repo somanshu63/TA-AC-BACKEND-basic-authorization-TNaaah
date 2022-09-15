@@ -1,0 +1,13 @@
+<%- include('partials/header') -%>
+    <main>
+      <div class="user-details padding-0-3 margin-3-0">
+        <h3 class="fs-30 blue text-center"><%= user.name %></h3>    
+        <p class="fs-25 "><%= user.email %></p>
+        <p class="fs-20 like"><%= user.phone %></p>
+        <p class="fs-20 like">isAdmin: <%= user.isAdmin %></p>
+        <p class="fs-20 like">isBlocked: <%= user.block %></p>
+        <a class="btn btn-big red like" href="/users/<%= user.id %>/block">block <%= user.name %></a><br>
+        <a class="btn btn-big green like" href="/users/<%= user.id %>/unblock">unblock <%= user.name %></a>
+    </div>
+    </main>
+<%- include('partials/footer') -%>

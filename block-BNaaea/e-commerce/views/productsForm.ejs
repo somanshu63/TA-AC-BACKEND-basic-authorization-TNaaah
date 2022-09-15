@@ -1,0 +1,17 @@
+<%- include('partials/header') -%>
+    <main>
+      <div class="register">
+        <h1 class="text-center red fs-40 padding-3-0">Add Products</h1>
+        <form action="/products" method="post" class="width-300 margin-3-0">
+            <fieldset>
+                <input class="form-control" type="text" name="name" id="" placeholder="enter name">
+                <input class="form-control" type="number" name="quantity" id="" placeholder="enter quantity">
+                <input class="form-control" type="number" name="price" id="" placeholder="enter price">
+                <input class="form-control" type="text" name="image" id="" placeholder="enter image">
+                <input class="form-control" type="text" name="category" id="" placeholder="enter category">
+                <input class="form-control" type="submit" value="Add Product">
+            </fieldset>
+        </form>
+      </div>
+    </main>
+<%- include('partials/footer') -%>
