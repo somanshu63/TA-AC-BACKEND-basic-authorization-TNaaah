@@ -1,0 +1,30 @@
+<%- include('partials/header') -%>
+
+    <main>
+      <div class="register">
+        <h1 class="text-center red fs-40 padding-1-0">Register User</h1>
+        <form action="/users/register" method="post" class="width-300 margin-3-0">
+            <fieldset>
+              <% if(error){ %>
+                <p class="red text-center"><%= error %></p>
+              <% }%>
+                <input class="form-control" type="text" name="name" id="" placeholder="enter name">
+                <input class="form-control" type="email" name="email" id="" placeholder="enter email">
+                <input class="form-control" type="password" name="password" id="" placeholder="enter password">
+                <label for="true">isAdmin: <br> True</label>
+                <input type="radio" name="isAdmin" value="true" id="true">
+                <label for="false">False</label>
+                <input type="radio" name="isAdmin" value="false" id="false"><br>
+                <label for="free">Membership: <br> Free</label>
+                <input type="radio" name="membership" value="free" id="free">
+                <label for="vip">VIP</label>
+                <input type="radio" name="membership" value="vip" id="vip">
+                <label for="premium">PREMIUM</label>
+                <input type="radio" name="membership" value="premium" id="premium">
+                <input class="form-control" type="number" name="phone" id="" placeholder="enter phone number">
+                <input class="form-control" type="submit" value="register user">
+            </fieldset>
+        </form>
+      </div>
+    </main>
+<%- include('partials/footer') -%>

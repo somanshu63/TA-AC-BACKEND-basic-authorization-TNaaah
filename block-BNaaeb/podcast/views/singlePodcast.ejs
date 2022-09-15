@@ -1,0 +1,15 @@
+<%- include('partials/header') -%>
+<main>
+    <div class="home register padding-0-3" style="background-image: url(<%= podcast.image %>);">
+        <h1 class="text-center fs-40 text-cap padding-3-0 greenyellow"><%= podcast.name %></h1>
+        <img src="<%= podcast.image %>" alt="">
+        <a href="/users/<%= podcast.author.id %>">
+            <h5 class="fs-25 margin-1-0 white"><%= podcast.author.name %></h5>
+        </a>
+        <audio src="<%= podcast.audio %>" controls class="margin-1-0 block"></audio>
+        <p class="fs-20 ">Verified: <%= podcast.isVerified %></p>
+        <a href="/podcasts/<%= podcast.id %>/edit" class="btn btn-big bg-blue margin-1-0">edit podcast</a><br>
+        <a href="/podcasts/<%= podcast.id %>/delete" class="btn btn-big bg-red margin-1-0">delete podcast</a>
+    </div>
+</main>
+<%- include('partials/footer') -%>

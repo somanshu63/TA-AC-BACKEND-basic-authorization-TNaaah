@@ -1,0 +1,28 @@
+<%- include('partials/header') -%>
+<main>
+    <div class="dashboard padding-1-0 margin-0-1">
+        <h2 class="text-center fs-30 red text-cap">List of users</h2>
+        <% users.forEach( u => { %>
+            <div class="usersinfo">
+                <div class="flex align-center">
+                    <a href="/users/<%= u.id %>">
+                        <li class="blue fs-20 padding-1-0"><i class="fa-solid fa-chevron-right margin-0-1"></i><%= u.name %></li>
+                    </a>
+                    <li class="fs-15 membership">Membership: <%= u.membership %></li>
+                    <li class="fs-15 admin">Admin: <%= u.isAdmin %></li>
+                </div>
+                <div class="">
+                    <ul class="flex align-center padding-0-1">
+                        <% u.podcast.forEach( p => { %>
+                            <% if(!p.isVerified){ %>
+                                <li class="fs-15 verified">AllPodcastVerified: <%= p.isVerified %></li>
+                            <% } %>
+
+                            <% }) %>
+                    </ul>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</main>
+<%- include('partials/footer') -%>
