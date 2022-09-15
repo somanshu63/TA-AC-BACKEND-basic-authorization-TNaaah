@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+        <title>podcast</title>
+        <link rel="shortcut icon" href="/images/icon.webp" type="image/x-icon">
+        <link rel="stylesheet" href="/stylesheets/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/615eec2c8f.js" crossorigin="anonymous"></script>
+    </head>
+<body>
+    <header>
+        <div class="header flex align-center padding-1-0">
+            <a href="" class="brand fs-25">freakonomics radio</a>
+            <div class="flex align-center">
+                <a href="/podcasts">podcasts</a>
+                <a href="/podcasts/new">list podcast</a>
+                <a href="/users/dashboard">admin dashboard</a>
+                <a href="/users/register">register</a>
+                <% if(user){ %>
+                    <a href="" class="fs-20 logged-in-user"><%= user.name %></a>
+                    <% if(user.isAdmin){ %>
+                        <a href="/users/logout">logout admin</a>
+                    <% }else{ %>
+                        <a href="/users/logout">logout user</a>
+                    <% } %>
+                <% }else{ %>
+                    <a href="/users/login">login user</a>
+                <% } %>
+                
+            </div>
+        </div>
+    </header>
