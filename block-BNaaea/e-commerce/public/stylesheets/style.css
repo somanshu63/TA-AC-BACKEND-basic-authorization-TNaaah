@@ -1,0 +1,413 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+
+
+
+
+/* custom codes */
+*, *::after, *::before{
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Roboto', sans-serif;
+}
+.flex{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.flex-column{
+  flex-direction: column;
+}
+.text-center{
+  text-align: center;
+}
+.align-center{
+  align-items: center;
+}
+.justify-left{
+  justify-content: left;
+}
+a{
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+.btn{
+  color: white;
+  display: inline-block;
+}
+.btn-big{
+  border-radius: 6px;
+  border: 2px solid;
+  padding: 6px 8px;
+}
+.btn-small{
+  border-radius: 4px;
+  border: 2px solid;
+  padding: 4px 6px;
+}
+.red{
+  color: red;
+}
+.green{
+  color: green;
+}
+.blue{
+  color: blue;
+}
+.yellow{
+  color: yellow;
+}
+.bg-red{
+  background-color: red;
+}
+.bg-green{
+  background-color: green;
+}
+.bg-blue{
+  background-color: blue;
+}
+.bg-yellow{
+  background-color: yellow;
+}
+.fs-30{
+  font-size: 30px;
+}
+.fs-40{
+  font-size: 40px;
+}
+.fs-25{
+  font-size: 25px;
+}
+.fs-20{
+  font-size: 20px;
+}
+.fs-15{
+  font-size: 15px;
+}
+.width-300{
+  width: 300px;
+}
+.width-400{
+  width: 400px;
+}
+.width-100{
+  width: 100px;
+}
+.width-200{
+  width: 200px;
+}
+.padding-3-0{
+  padding: 3rem 0;
+}
+.padding-0-3{
+  padding: 0 3rem;
+}
+.margin-3-0{
+  margin: 3rem auto;
+}
+.form-control{
+  font-size: 18px;
+  padding: 4px;
+  border-radius: 4px;
+  margin: 5px 0;
+  width: 95%;
+  border: 2px solid blue;
+}
+.block{
+  display: block;
+}
+.width-20{
+  width: 20%;
+}
+.width-80{
+  width: 80%;
+}
+
+
+
+
+/* header */
+.header{
+  z-index: 100;
+  padding: 1rem;
+  background-color: rgb(255, 208, 0);
+}
+.header a:hover, .header p{
+  color: red;
+}
+.header a{
+  margin: 0 12px;
+}
+.header a img{
+  width: 40px;
+}
+.filters{
+  position: relative;
+}
+.filter-options{
+  display: none;
+  position: absolute;
+  top: 25px;
+  background-color: lightgray;
+  padding: 0.5rem 1rem;
+}
+.filter-options .form-control{
+  margin-bottom: 0;
+}
+.filter-options:hover,  .filter:hover ~ .filter-options{
+  display: block;
+}
+
+
+
+/* footer */
+footer{
+  z-index: 100;
+  padding: 1rem;
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* home page */
+.home{
+  width: 100%;
+  background-image: url(/images/home-bg.webp);
+  background-size: cover;
+  background-position: 50%;
+  height: 100vh;
+}
+.home-shop{
+  font-size: 44px;
+  text-transform: uppercase;
+  position: absolute;
+  width: 250px;
+  bottom: -45px;
+  left: 41%;
+  color: white;
+  padding: 8px 10px;
+  background-color: #2F68FA;
+  font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
+
+/* products page */
+.products{
+  margin-left: 20%;
+}
+.product-item{
+  margin: 2rem 1rem;
+  border: 2px solid blue;
+  box-shadow: 0px 0 10px 2px yellow;
+  padding: 2rem;
+}
+.product-item img{
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+}
+.product-item h3{
+  margin: 1rem 0;
+}
+.cart-btn{
+  margin: 1rem 0 0 0;
+}
+.aside{
+  background-color: rgb(255, 166, 0);
+  position: fixed;
+  top: 0;
+}
+.aside li{
+  margin: 1rem;
+}
+.aside i{
+  margin-right: 5px;
+  color: black;
+}
+.aside ul{
+  height: 200px;
+  overflow: auto;
+}
+.bg-blue{
+  background-color: #2F68FA;
+  color: white;
+  margin: 1rem 3.5rem;
+}
+.aside form{
+  padding-left: 1rem;
+}
+.yellow-box{
+  width: 100%;
+  background-color: #FFD137;
+  height: 75px;
+  margin-bottom: 2rem;
+}
+.black-box{
+  width: 100%;
+  margin-top: 15px;
+  background-color: black;
+  height: 60px;
+}
+.yellow-box .brand{
+  padding: 1.6rem 2rem;
+  display: inline-block;
+}
+
+
+
+
+/* single product */
+.admin-controls{
+  margin: 2rem 0;
+}
+.admin-controls a{
+  margin: 1rem 0;
+}
+.like{
+  margin: 1rem 0 0 0 ;
+}
+.image{
+  width: 40%;
+}
+.image img{
+  width: 100%;
+  height: 400px;
+}
+.details{
+  width: 60%;
+  margin-top: 3rem;
+}
+.comments h4{
+  margin: 4rem 0 1rem 0;
+}
+
+
+
+
+
+
+
+
+
+/* carts page */
+.cart-item{
+  position: relative;
+  border: 2px solid black;
+  border-radius: 4px;
+  margin: 2rem 0;
+}
+.cart-item img{
+  width: 100px;
+  height: 100px;
+  margin-right: 120px;
+}
+.price{
+  position: absolute;
+  top: 35%;
+  left: 55%;
+}
+.remove{
+  position: absolute;
+  top: 35%;
+  right: 15%;
+}
+.checkout{
+  border: 2px solid rgb(247, 0, 0);
+  padding: 1rem;
+  border-radius: 4px;
+  margin: 5rem 8rem 3rem 8rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* admin dashboard */
+.list{
+  width: 250px;
+  height: 300px;
+  overflow: auto;
+}
+.list li{
+  margin: 0.5rem 0;
+}
+.list i{
+  margin-right: 0.5rem;
+}
+.text-cap{
+  text-transform: capitalize;
+}
