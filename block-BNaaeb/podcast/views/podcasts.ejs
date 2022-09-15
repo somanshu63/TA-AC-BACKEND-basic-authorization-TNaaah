@@ -1,0 +1,36 @@
+<%- include('partials/header') -%>
+<main>
+    <div class="home flex">
+        <aside>
+            <div class="aside">
+                <a href="" class="brand fs-25 padding-1 greenyellow">freakonomics radio</a>
+                <% if(user){ %>
+                    <h3 class="fs-25 text-cap margin-1-0 white">membership</h3>
+                    <span class="fs-20 margin-1-0 white text-upp red"><%= user.membership %></span>
+                    <% if(user.membership == 'free'){ %>
+                        <a href="/users/<%= user.id %>/uptovip" class="btn btn-big greenyellow margin-1-0 block">upgrade to VIP</a>
+                        <a href="/users/<%= user.id %>/uptoprm" class="btn btn-big greenyellow margin-1-0 block">upgrade to PREMIUM</a>
+                    <% }else if(user.membership == 'vip'){ %>
+                        <a href="/users/<%= user.id %>/uptoprm" class="btn btn-big greenyellow margin-1-0 block">upgrade to PREMIUM</a>
+                    <% } %>
+                <% } %>
+                <img src="/images/footerpodcasticon.png" alt="">
+            </div>
+        </aside>
+        <div class="homebg">
+            <h1 class="text-center fs-40 text-cap margin-1-0">podcasts</h1>
+            <div class="podcasts-list justify-left flex flex-wrap">
+                <% podcasts.forEach( p  => { %>
+                    <a href="/podcasts/<%= p.id %>">
+                        <div class="podcast-item">
+                            <img src="<%= p.image %>" alt="">
+                            <h3 class="fs-20 text-cap margin-1-0"><%= p.name %></h3>
+                            <p class="fs-15"><%= p.time %>m</p>
+                        </div>
+                    </a>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+</main>
+<%- include('partials/footer') -%>

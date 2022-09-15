@@ -1,0 +1,26 @@
+<%- include('partials/header') -%>
+<main>
+    <div class="home register padding-0-3">
+        <h1 class="text-center fs-40 text-cap padding-3-0 black"><%= user.name %></h1>
+        <p class="fs-25 margin-1-0"><%= user.email %></p>
+        <p class="fs-25 margin-1-0">Admin: <%= user.isAdmin %></p>
+        <p class="fs-25 margin-1-0">Membership: <%= user.membership %></p>
+        <h2 class="margin-1-0 fs-25 text-cap text-center">podcasts</h2>
+        <% user.podcast.forEach(p => { %>
+            <div class="flex user-podcasts margin-1-0 align-center">
+                <img src="<%= p.image %>" alt="image">
+                <a href="/podcasts/<%= p.id %>" class="black">
+                    <h4 class="fs-20"><%= p.name %></h4>
+                </a>
+                <span class="fs-20"><%= p.time %>m</span>
+                <p class="fs-20">Section: <%= p.section %></p>
+                <p class="fs-20">Verified: <%= p.isVerified %></p>
+                <% if(!p.isVerified){ %>
+                    <a href="/podcasts/<%= p.id %>/verify" class="btn btn-small blue">verify</a>
+                <% } %>
+            </div>
+        <% }) %>
+
+    </div>
+</main>
+<%- include('partials/footer') -%>

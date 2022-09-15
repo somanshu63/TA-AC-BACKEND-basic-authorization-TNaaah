@@ -1,0 +1,19 @@
+<%- include('partials/header') -%>
+
+    <main>
+      <div class="register">
+        <h1 class="text-center red fs-40 padding-1-0 text-cap">list podcast</h1>
+        <form action="/podcasts" method="post" class="width-300 margin-3-0">
+            <fieldset>
+                <input class="form-control" type="text" name="name" id="" placeholder="enter name">
+                <input class="form-control" type="text" name="image" id="" placeholder="enter image">
+                <input class="form-control" type="date" name="date" id="" placeholder="enter date">
+                <input class="form-control" type="time" name="time" id="" placeholder="enter time">
+                <input class="form-control" type="text" name="section" id="" placeholder="enter section">
+                <input class="form-control" type="text" name="audio" id="" placeholder="enter podcast">
+                <input class="form-control" type="submit" value="List Podcast">
+            </fieldset>
+        </form>
+      </div>
+    </main>
+<%- include('partials/footer') -%>
